@@ -1,0 +1,67 @@
+/*
+Converting time in (Hr-Min-Sec) to seconds 
+Write a function called hms_to_secs() that takes three int
+values for hours, minutes, 
+and seconds—as arguments, and returns the equivalent time in
+seconds (type long). 
+    Function prototypes is given below: 
+    long hms_to_secs(int hrs, int mins, int secs);
+*/
+#include <stdio.h>
+struct h_m_s{
+    int hrs;
+    int mins;
+    int secs;
+};
+long hms_to_secs(int hrs, int mins, int secs){
+    return((long)(hrs*3600L)+(long)(mins*60L)+((long)(secs)));
+}
+
+/*
+Computing x to the power y (xy) 
+Write a function that takes two integers (x and y) as input,
+and computes x to the power y and returns the result. No bui-in
+library functions for computing power may be used. 
+    Use loops instead. Function prototypes is given below: 
+    long x_pwr_y(int x, int y);
+*/
+long x_pwr_y(int x, int y){
+    if(x==0){
+        return(x);
+    }
+    else if(y==0){
+        return(1);
+        }
+        else{
+            long result=1;
+            for(int i=0; i<y; i++){
+                result=result*x;
+            }
+            return(result);
+        }
+}
+
+int odd_sum(int start, int end){
+    long o_sum=0;
+    for(int i=start; i<=end; i++){
+        if(i%2!=0){
+            o_sum=o_sum+i;
+        }
+    }
+    return(o_sum);
+}
+//main function
+int main() {
+    // Write C code here
+    struct h_m_s hmss = {10,10,10};
+    long pwrr=x_pwr_y(2,3);
+    printf("%ld \n", pwrr);
+    long seconds=hms_to_secs(hmss.hrs, hmss.mins, hmss.secs); 
+    printf("%ld \n", seconds);
+    int start=2;
+    int end=86;
+    long sum_odd_numbers=0;
+    sum_odd_numbers=odd_sum(start,end);    
+    printf("%ld \n", sum_odd_numbers);
+    return 0;
+}

@@ -9,7 +9,7 @@ Function prototypes is given below:
 #include<stdio.h>
 
 int odd_sum(int start, int end){
-    long o_sum=0;
+    int o_sum=0;
     for(int i=start; i<=end; i++){
         if(i%2!=0){
             o_sum=o_sum+i;
@@ -21,7 +21,7 @@ int odd_sum(int start, int end){
 int main(){
     int start=2;
     int end=4;
-    long sum_odd_numbers=0;
+    int sum_odd_numbers=0;
     sum_odd_numbers=odd_sum(start,end);    
-    printf("%ld \n", sum_odd_numbers);
+    printf("%d \n", sum_odd_numbers);
 }
